@@ -287,6 +287,9 @@ func (s1 *Server) Equal(s2 *Server) bool {
 	if s1.SSLCiphers != s2.SSLCiphers {
 		return false
 	}
+	if s1.TrustXForwardedFor != s2.TrustXForwardedFor {
+		return false
+	}
 
 	// Location are sorted
 	for idx, s1l := range s1.Locations {
